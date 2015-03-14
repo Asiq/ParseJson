@@ -1,0 +1,11 @@
+{
+	"lastname" : "Demo",
+	"firstname" : "User",
+	"email" : "demo_user@demo.com",
+	"details" : {
+		"age" : "23",
+		"sex" : "male",
+		"skills" : ["java", "c#", "ruby"]
+	}
+}
+

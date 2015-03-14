@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+
+<script src="C:\\Users\\hussain\\Desktop\\TestInter\\jquery-2.1.1.min.js"></script>
+
+
+</head>
+
+<body onload=loadJSON();>
+
+<h1> Main Page</h1>
+
+<table style="width:330px;border:1px solid gray; padding:20px;"> 
+<tr>
+<td>
+First Name
+</td> 
+<td>
+<input type="text" name="firstname" id="first">
+</td>
+</tr>
+
+<tr>
+<td>
+LastName 
+</td>
+<td>
+<input type="text" name="lastname" id="last">
+</td>
+</tr>
+
+<tr>
+<td>Email
+</td>
+
+<td> <input type="text" name="email" id="email" >
+</td>
+
+</tr>
+
+<tr style="text-align:center;">
+<td>
+<label> Details </label> 
+</td>
+</tr>
+
+<tr>
+<td>Age
+</td>
+<td>
+<input type="text"  id="age" >
+</td>
+</tr>
+<tr>
+<td>Sex
+</td>
+<td> <input type="text" id="sex" > 
+</td>
+</tr>
+<tr>
+<td>
+<label> Skills </label>
+</td>
+
+<td>
+<input type ="text" id="skill">
+</td>
+</tr>
+<tr>
+<td>
+<a href="C:\Users\hussain\Desktop\TestInter\interview.html">Back</a>
+</td>
+</tr>
+</table>
+<script>
+function loadJSON()
+{
+
+$.getJSON("json_sample.json", function(json) {
+    console.log(json); // this will show the info it in firebug consoleDa
+	
+	var myData=json;
+	
+	document.getElementById("last").value = myData.lastname;
+	document.getElementById("first").value = myData.firstname;
+	document.getElementById("email").value = myData.email;
+	
+	
+	document.getElementById("age").value = myData.details.age;
+	
+	document.getElementById("sex").value = myData.details.sex;
+	
+	var skillVal=myData.details.skills;
+	document.getElementById("skill").value = skillVal;
+	
+	
+	//sk=skillVal.split(',');
+	
+	
+	
+	
+	
+	
+	
+});
+}
+
+</script>
+</body>
+
+</html>
